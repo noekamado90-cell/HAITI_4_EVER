@@ -4,39 +4,39 @@
     <meta charset="UTF-8">
     <title>Portail Vidéo de Noékamado</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 40px; background-color: #f0f4f8; text-align: center; }
-        .haiti-flag { position: fixed; width: 80px; height: 50px; z-index: 100;
-            background: linear-gradient(to bottom, #00209F 50%, #D21034 50%);
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Coat_of_arms_of_Haiti.svg/100px-Coat_of_arms_of_Haiti.svg.png');
-            background-size: 30px 30px; background-position: center; background-repeat: no-repeat;
-            border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            animation: flag-wave 4s ease-in-out infinite; }
-        .tl { top: 15px; left: 15px; } .tr { top: 15px; right: 15px; }
-        @keyframes flag-wave { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f0f4f8; text-align: center; }
+        h1 { color: #222; }
+        .devise { font-style: italic; color: #8b0000; font-weight: bold; margin-bottom: 20px; }
         
-        .video-container { background: white; padding: 20px; border-radius: 10px; margin: 20px auto; width: 80%; max-width: 600px; }
+        /* Drapeaux */
+        .flag { position: fixed; width: 60px; height: 40px; z-index: 100;
+            background: linear-gradient(to bottom, #00209F 50%, #D21034 50%);
+            border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            animation: wave 3s infinite alternate; }
+        .tl { top: 10px; left: 10px; } .tr { top: 10px; right: 10px; }
+        .bl { bottom: 10px; left: 10px; } .br { bottom: 10px; right: 10px; }
+        @keyframes wave { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+        
+        /* Vidéo */
+        .video-box { background: white; padding: 15px; border-radius: 10px; margin: 20px auto; max-width: 500px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         video { width: 100%; border-radius: 5px; }
-        .btn { display: inline-block; background: #0070f3; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+        .btn { display: inline-block; background: #0070f3; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
     </style>
 </head>
 <body>
-    <div class="haiti-flag tl"></div><div class="haiti-flag tr"></div>
+    <div class="flag tl"></div><div class="flag tr"></div>
+    <div class="flag bl"></div><div class="flag br"></div>
 
     <h1>Bienvenue sur mon portail</h1>
-    
-    <div class="video-container">
-        <!-- Remplace 'ma_video.mp4' par le nom exact de ton fichier vidéo -->
+    <p class="devise">"On est élevé dans le sang et on mourra dans le sang"</p>
+
+    <!-- Zone Vidéo : Remplace 'video1.mp4' par le nom exact de ton fichier -->
+    <div class="video-box">
         <video controls>
-            <source src="ma_video.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la vidéo.
+            <source src="video1.mp4" type="video/mp4">
         </video>
         <br>
-        <a href="ma_video.mp4" download class="btn">Télécharger la vidéo</a>
-    </div>
-
-    <div class="video-container">
-        <h3>Commentaires</h3>
-        <script src="https://utteranc.es/client.js" repo="TON_NOM_UTILISATEUR/my_site" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+        <a href="video1.mp4" download class="btn">Télécharger la vidéo</a>
     </div>
 </body>
 </html>
